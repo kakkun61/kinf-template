@@ -1,4 +1,4 @@
-name: generate
+name: lint
 
 on:
   - push
@@ -20,13 +20,13 @@ jobs:
         cache-name: cache-cabal
       with:
         path: ~/.cabal
-        key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/*.cabal') }}-${{ hashFiles('**/cabal.project') }}
+        key: ${{ runner.os }}-lint-${{ env.cache-name }}-${{ hashFiles('**/cabal.project') }}
         restore-keys: |
-          ${{ runner.os }}-build-${{ env.cache-name }}-
-          ${{ runner.os }}-build-
+          ${{ runner.os }}-lint-${{ env.cache-name }}-
+          ${{ runner.os }}-lint-
           ${{ runner.os }}-
 
     - run: cabal update
-    - run: cabal build --only-dependencies
-    - run: make build
-    - run: make generate
+    - run: cabal install hlint
+    - run: echo "::set-env name=PATH::$HOME/.cabal/bin:$PATH"
+    - run: make lint

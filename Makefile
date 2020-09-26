@@ -11,7 +11,7 @@ build:
 
 .PHONY: lint
 lint:
-	stack exec -- hlint app content
+	hlint app content
 
 .PHONY: format
 format:
