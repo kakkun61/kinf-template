@@ -4,6 +4,8 @@
 
 A static site generator template powered by [Shake](https://shakebuild.com), [Lucid](https://hackage.haskell.org/package/lucid) and [Hint](https://hackage.haskell.org/package/hint).
 
+[A blog post is here](https://dev.to/kakkun61/static-site-generator-powered-by-shake-lucid-and-hint-d5b).
+
 ## Dependencies
 
 - [Filesystem Access Tracer](https://github.com/jacereda/fsatrace) (fsatrace)
