@@ -10,23 +10,5 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - uses: actions/setup-haskell@v1
-      with:
-        ghc-version: '8.8.2'
-        cabal-version: '3.0'
-
-    - uses: actions/cache@v1
-      env:
-        cache-name: cache-cabal
-      with:
-        path: ~/.cabal
-        key: ${{ runner.os }}-lint-${{ env.cache-name }}-${{ hashFiles('**/cabal.project') }}
-        restore-keys: |
-          ${{ runner.os }}-lint-${{ env.cache-name }}-
-          ${{ runner.os }}-lint-
-          ${{ runner.os }}-
-
-    - run: cabal update
-    - run: cabal install hlint
-    - run: echo "::set-env name=PATH::$HOME/.cabal/bin:$PATH"
+    - uses: rwe/actions-hlint-setup@v1
     - run: make lint
