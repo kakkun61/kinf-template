@@ -11,7 +11,7 @@ A static site generator template powered by [Shake](https://shakebuild.com), [Lu
 - [Filesystem Access Tracer](https://github.com/jacereda/fsatrace) (fsatrace)
 - [PowerShell Core](https://github.com/PowerShell/PowerShell) (pwsh)
   - able to be replaced
-- [wai-static-app](https://hackage.haskell.org/package/wai-app-static) (warp)
+- [wai-app-static](https://hackage.haskell.org/package/wai-app-static) (warp)
   - able to be replaced
 
 ## Build
