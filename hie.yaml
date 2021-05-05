@@ -9,5 +9,11 @@ cradle:
     - path: "content/lib"
       component: "lib:content"
 
+    - path: "content/./index.hs"
+      component: "content:exe:index"
+
+    - path: "content/./credit.hs"
+      component: "content:exe:credit"
+
     - path: "content/article/1-article.hs"
       component: "content:exe:article"

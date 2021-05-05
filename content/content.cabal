@@ -22,6 +22,16 @@ library
   hs-source-dirs:      lib
   exposed-modules:     Layout
 
+executable index
+  import:           executable
+  hs-source-dirs:   .
+  main-is:          index.hs
+
+executable credit
+  import:           executable
+  hs-source-dirs:   .
+  main-is:          credit.hs
+
 executable article
   import:           executable
   hs-source-dirs:   article
